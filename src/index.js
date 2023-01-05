@@ -1,5 +1,6 @@
 import Notiflix from 'notiflix';
 import fetchImages from './fetchImages';
+import './css/styles.css';
 
 let page = 1;
 let per_page = 40;
