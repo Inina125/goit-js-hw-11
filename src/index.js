@@ -74,10 +74,17 @@ const handleSubmit = async e => {
 const handleClick = async e => {
   button.style.display = 'none';
   const images = await fetchImages(query, page, per_page);
-
   renderImages(images.hits);
   button.style.display = 'block';
+
   page = page + 1;
+
+  if ((page - 1) * per_page >= images.totalHits) {
+    Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
+    button.style.display = 'none';
+  }
 };
 
 form.addEventListener('submit', e => handleSubmit(e));
