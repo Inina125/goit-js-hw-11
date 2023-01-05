@@ -57,7 +57,7 @@ const handleSubmit = async e => {
   const elements = form.elements;
   query = elements.searchQuery.value;
   const images = await fetchImages(query, page, per_page);
-  console.log(images);
+ 
 
   if (images.hits.length === 0) {
     Notiflix.Notify.failure(

@@ -13,10 +13,10 @@ async function fetchImages(query, page, per_page) {
 
   try {
     const response = await axios.get(`https://pixabay.com/api/?${params}`);
-    console.log(response);
+   
     return response.data;
   } catch (error) {
-    console.error(error);
+   
     throw new Error(error);
   }
 }
